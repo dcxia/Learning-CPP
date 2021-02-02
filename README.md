@@ -10,10 +10,9 @@ Proof of the steps I've taken to learn cpp. This way we can both gauge my compet
 
 # How users can get started with the project!
 Resources contains works from resources I've found to teach me cpp.
-require "Resources"
+
 
 Projects contains things I've made myself.
-require "Projects"
 
 # Who maintains and contributes to the project.
 me.
