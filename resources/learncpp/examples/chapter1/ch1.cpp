@@ -42,7 +42,7 @@ int LCpp1_5(){
 
     std::cout <<"Enter a number.\n";
     int in{};
-    std :: cin >> in;
+    std::cin >> in;
     std::cout << "You entered " << in << '\n';
     return 0;
 }
@@ -94,7 +94,7 @@ void learningCpp1_8(){
 
         cost            = 21;
         pricePerItem    = 24;
-        value           = 5;
+        value           = 5;;
         numberOfItems   = 17;
      */
 }
@@ -102,6 +102,13 @@ void learningCpp1_8(){
 // Intro to literals and operators
 void learningCpp1_9(){
     // check notes 
+}
+
+// Intro to expressions
+void learningCpp1_10(){
+    // 2+3 is expression that evaluates to 5
+
+    int x{2+3};
 }
 
 

@@ -10,14 +10,17 @@ Types of Statements:
 
 
 ***
-Every cpp program must have a function called main. When the program is run, execution starts with the first statement inside of function main and then continues sequentially.
+Every cpp program must have a function called main. When the program is run, 
+execution starts with the first statement inside of function main and then conti
+nues sequentially.
 ***
 
 
 ///
     Best Practices:
 ///
-    Be sure to comment code liberally. More the information the better. Especially when computing things using in line constants.
+    Be sure to comment code liberally. More the information the better. 
+    Especially when computing things using in line constants.
 ///
     When init variables, try to directly list init them.
     eg)
@@ -26,7 +29,8 @@ Every cpp program must have a function called main. When the program is run, exe
 
     This saves on memory and run time.
 
-    Additionally, by using direct list init, cpp will throw errors bc of type checking
+    Additionally, by using direct list init, cpp will throw errors bc of type 
+    checking
     basically, it won't round values if you use list init. 
 
     eg)
@@ -35,7 +39,8 @@ Every cpp program must have a function called main. When the program is run, exe
 
 
 ***
-    Certain datatypes have constraints on the value that they can hold. eg) int has a limit and going over that will cause an overflow.
+    Certain datatypes have constraints on the value that they can hold. eg) int 
+    has a limit and going over that will cause an overflow.
 ***
 
 
@@ -152,9 +157,9 @@ Cpp is case sensitive so
 You can begin variables/function with _
 
 
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 CONVENTIONS:
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 variables should always be lowercase
 
     int value;
@@ -171,5 +176,37 @@ either separate words by underscores or camelcase.
     int my_function_name();
 
 --------------------------------------------------------------------------------
+1.9:    Introduction to Literals and Operators
+--------------------------------------------------------------------------------
+Literals:
+    short for Literal Constant.
+    Has a fixed value that has been inserted directly into the source code.
+
+Operators:
+    Math Operations.
+
+        +   Addition 
+        -   Subtraction 
+        *   Multiplication 
+        /   Division
+        =   Assignment
+        ==  Equality 
+        <<  Insertion
+        >>  Extraction
 
 --------------------------------------------------------------------------------
+1.10:   Intro To Expressions
+--------------------------------------------------------------------------------
+
+Expressions are statements that can be evaluated to produce a single result.
+
+examples in first.cpp
+
+***
+    Key Insight:
+
+    Values calculated in an expression are discarded at the end of the 
+    expression 
+***
+
+

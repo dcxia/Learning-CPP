@@ -1,0 +1,15 @@
+CC = g++
+
+
+PROJECTNAME = ch2
+
+all: $(PROJECTNAME)
+
+$(PROJECTNAME): $(PROJECTNAME).cpp
+	$(CC) -o $(PROJECTNAME).exe $(PROJECTNAME).cpp
+
+run:
+	$(PROJECTNAME).exe
+
+clean:
+	del $(PROJECTNAME).exe

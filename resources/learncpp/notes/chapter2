@@ -1,0 +1,75 @@
+--------------------------------------------------------------------------------
+2.1 : Intro to functions
+--------------------------------------------------------------------------------
+
+Functions can be called from other functions.
+If a function calls on another function, the original function is called the 
+caller.
+
+
+Function Structure
+"""
+    return-type identifier(){
+        //insert code here
+    }
+"""
+
+cpp does not support nested functions!
+
+
+--------------------------------------------------------------------------------
+2.2 : Function return values
+--------------------------------------------------------------------------------
+/// Best Practice
+
+    Main should always return 0,
+    if main returns 0 then the program ran normally
+///
+
+*** Advanced
+
+    If you use the  'cstdlib' library, you can return different types of status 
+    codes as ints.
+
+    0, EXIT_SUCCESS
+    EXIT_FAILURE
+***
+
+Additionally, you cannot explicitly call the main function.
+
+/// Best Practice
+
+    Always explicitly provide a return value for any function that has a 
+    non-void return type.
+
+    If you dont return a value when it expects one (other than main), you'll get 
+    undefined behaviour.
+///
+
+/// Best Practice
+
+    If you find yourself writing repetitive code, you should throw it into a 
+    function.
+///
+
+Additionally, you can use returned values from functions to init variables.
+eg)
+
+    int getValueFromUser(){...}
+
+    int x{ getValueFromUser() };
+
+When you call a function, and use it's return value in an expression, you will 
+only get the return value for that expression.
+
+eg) See ch2.cpp 
+
+--------------------------------------------------------------------------------
+2.3 : Intro to function parameters and arguements
+--------------------------------------------------------------------------------
+
+
+
+
+
+

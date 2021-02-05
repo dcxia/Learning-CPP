@@ -1,7 +1,7 @@
 CC = g++
 
 
-PROJECTNAME = first
+PROJECTNAME = 1_11
 
 all: $(PROJECTNAME)
 
