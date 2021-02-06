@@ -1,0 +1,19 @@
+# Usage:
+# make			# compile all binary
+# make clen		# remove ALL binaries and objects
+CC = g++
+
+PROJECTNAME = 2_7
+
+
+
+all: $(PROJECTNAME)
+
+$(PROJECTNAME):
+	$(CC) -o $(PROJECTNAME).exe main.cpp add.cpp
+
+run:
+	$(PROJECTNAME).exe
+
+clean:
+	del $(PROJECTNAME).exe

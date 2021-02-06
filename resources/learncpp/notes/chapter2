@@ -158,6 +158,10 @@ other functions. This helps keep functions independent.
 ///
 
 
+
+
+
+
 --------------------------------------------------------------------------------
 2.5 : Why functions are useful and how to use them effectively.
 --------------------------------------------------------------------------------
@@ -186,6 +190,9 @@ Abstraction
 
 
 
+
+
+
 --------------------------------------------------------------------------------
 2.6 : Forward Declarations and Definitions
 --------------------------------------------------------------------------------
@@ -198,7 +205,6 @@ When CPP compiles code, it will always compile code sequentially. Therefore...
     error then compile again.
 ///
 
-
 However sometimes functions will call on each other in a way such that it's
 impossible to order the functions sequentially. 
 
@@ -207,11 +213,60 @@ As a result, we can use something called...
 Function Prototyping.
 
     We can declare a function before it's actual implementation to allow the 
-    compiler to know of it's existence.
+    compiler to know of it's existence. 
+
+    This is called a declaration.
 
     eg) 
+        see ch2.main2_6()
 
-see ch2.main2_6()
+Definition:
+    Actually implements (for functions or types) or instantiates (for variables)
+    the identifier.
+
+    eg)
+        // Statement Definition
+        int add(int x, int y){
+
+            // Variable Definition
+            int z{x + y};
+            
+            return z;
+        }
+
+THE ONE DEFINITION RULE (ODR):
+    - Contains 3 parts:
+        1.  Within a given file, a function, object, type or template can have 
+            only one definition.
+        
+        2.  Within a given program, an object or normal function can only have 
+            one definition. This distinction is made because programs can have 
+            more than one file. 
+
+        3.  Types, templates, inline functions, and variables are allowed to 
+            have identical definitions in different files.
+
+Declaration:
+    a statement that tells the compiler about the existence of an identifier and
+    it's type information.
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+2.7 : Programs with multiple code files
+--------------------------------------------------------------------------------
+When you add new code files to your project give them a cpp extension.
+
+Remember to modify the make file, maybe we'll get into object linking after 
+compilation at some point.
+
+When compiling multi-file program, it can compile the files in any order. 
+Additionally it compiles each file individually with no knowledge of other files
+. If you a file needs to see another function from another file, be sure to 
+declare the function in the original file.
 
 
 
@@ -219,9 +274,57 @@ see ch2.main2_6()
 
 
 
+--------------------------------------------------------------------------------
+2.8: Naming collisions and an introduction to namespaces
+--------------------------------------------------------------------------------
+
+If two identical identifiers are introduced into the same program in a way that 
+the compiler or linker can't tell them apart, the compiler or linker will 
+produce an error.
+
+The error that results is a naming collision/ conflict
+
+We can avoid having collisions using NAMESPACES
+
+Within a namespace, you can declare names for the purpose of disambiguation.
+The namespace provides a scope to the names declared in it.
+
+A name declared in a namespace won't be mistaken for an identical name declared
+in another scope.
+
+However, within the namespace, the names of identifiers must be unique.
+
+
+The Global Namespace:
+    Any name that is not defined inside a class, function or a namespace is 
+    considered to be part of an implicitly defined namespace called the Global
+    namespace. (global scope).
+
+    So be careful about making things public.
+
+
+You can call identifiers from their namespace using this notation.
+
+    std::cout << "hello world!";
+
+where std is the namespace that contains the function cout.
+
+
+Using Namespace std (and why to avoid it):
+    
+    You can import namespaces with..
+        using namespace namespaceName;
+    
+    We want to avoid using namespaces in case we create a local function that 
+    has the same name as a function from a namespace we're using.    
 
 
 
 
+
+
+--------------------------------------------------------------------------------    
+2.9: Introduction to the Preprocessor
+--------------------------------------------------------------------------------    
 
 
