@@ -319,12 +319,63 @@ Using Namespace std (and why to avoid it):
     has the same name as a function from a namespace we're using.    
 
 
+!!! Question !!! 
+    How do WE make namespaces?
 
 
 
 
---------------------------------------------------------------------------------    
+
+
+================================================================================
 2.9: Introduction to the Preprocessor
---------------------------------------------------------------------------------    
+================================================================================
+Before code is compiled, it goes through a phase called translation. If a code 
+file with translations applied to it is called a translation unit.
+
+
+The Preprocessor:
+    The preprocessor is best thought of as a separate program that manipulates
+    the text in each code file.
+
+    The preprocessor looks for 
+
+    Preprocessor Directives:
+        Often just called directives. 
+        They start with a # symbol and end with a newline instead of a semicolon
+
+        These directives are used to perform specific text manipulation tasks.
+
+
+#include <file> [imports?]
+    this directive is replaced by the contents of the included file. It will 
+    specifically replace #include with the preprocessed contents of the file 
+    named.
+
+
+#define VAR_NAME [Object like macros]
+    These object-like macros WERE used as an alternative to constant variables.
+    These are like garbage constants and are a legacy thing.
+
+    HOWEVER, we can use them remove all identifiers of that name, 
+    if we use #define VAR_NAME then all identifiers of VAR_NAME will be removed
+    from the file. 
+
+
+#ifdef , #ifndef , #endif
+    We can use this to prevent code from being compiled by defining object-like 
+    Macros. 
+
+    eg) Check 2_9
+
+    #define VAR_NAME 
+    won't remove other preprocessor directives. 
+
+    Additionally, the scope of the directive is limited to the file it is 
+    defined in this is due to compiling separate files and then linking them 
+    together.
+
+
+
 
 
