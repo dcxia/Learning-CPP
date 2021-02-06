@@ -33,6 +33,22 @@ int main2_3(){
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+// This is a forward Declaration, it allows the compiler to know of add before
+// it is caled by main2_6()
+int add(int x, int y);
+
+int main2_6(){
+   //insert code here 
+   // calls add()
+}
+
+int add(int x, int y){
+    return x + y;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
 int main(){
     //main2_3();
     return 0;

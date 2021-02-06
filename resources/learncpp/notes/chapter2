@@ -128,3 +128,100 @@ WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
 2.4 : Intro to local scope
 --------------------------------------------------------------------------------
 
+Local Variables:
+    Function parameters and variables defined inside the function body are 
+    called local variables.
+
+    Additionally, it should be noted that the scope of local variables within 
+    functions only exist within the function. Therefore, they cannot be called
+    from outside functions.
+
+Local Variable LifeTime:
+    Once a local variable is instantiated, they are destroyed once the function
+    is finished running.
+
+    Local variables are destroyed in the opposite order of creation. 
+
+    The lifetime of the variable is measured between the birth and death of the 
+    variable. 
+
+Functional Seperation:
+
+Names used for function parameters or variables declared in a function body are 
+only visible within the function that declares them. This means local variables
+within a function can be named without regard for the names of variables in 
+other functions. This helps keep functions independent.
+
+/// Best Practice  
+
+    Define your local variables as close to their first use as reasonable.
+///
+
+
+--------------------------------------------------------------------------------
+2.5 : Why functions are useful and how to use them effectively.
+--------------------------------------------------------------------------------
+
+Organization
+Reusability
+Testing
+Extensibility
+Abstraction
+
+/// Best Practices:
+
+    Statements that apear more than once in a program should generally be made 
+    into a function.
+
+    Code that has a well-defined set of inputs and outputs is a good candidate 
+    for a function, particularly if it is complicated. 
+
+    A function should generally perform one (and only one ) task
+
+    Refactoring:
+        When a function becomes too long, too complicated or hard to understand.
+        These function should be split into multiple sub-functions.
+
+///
+
+
+
+--------------------------------------------------------------------------------
+2.6 : Forward Declarations and Definitions
+--------------------------------------------------------------------------------
+
+When CPP compiles code, it will always compile code sequentially. Therefore...
+
+/// Best Practice
+
+    When addressing compile errors in your program, always resolve the first 
+    error then compile again.
+///
+
+
+However sometimes functions will call on each other in a way such that it's
+impossible to order the functions sequentially. 
+
+As a result, we can use something called...
+
+Function Prototyping.
+
+    We can declare a function before it's actual implementation to allow the 
+    compiler to know of it's existence.
+
+    eg) 
+
+see ch2.main2_6()
+
+
+
+
+
+
+
+
+
+
+
+
+
