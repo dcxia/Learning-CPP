@@ -17,6 +17,12 @@ Function Structure
 cpp does not support nested functions!
 
 
+
+
+
+
+
+
 --------------------------------------------------------------------------------
 2.2 : Function return values
 --------------------------------------------------------------------------------
@@ -64,12 +70,61 @@ only get the return value for that expression.
 
 eg) See ch2.cpp 
 
+
+
+
+
+
+
+
 --------------------------------------------------------------------------------
-2.3 : Intro to function parameters and arguements
+2.3 : Intro to function parameters and arguments
 --------------------------------------------------------------------------------
+Parameters are defined within the function identifier.
+
+eg)
+
+    void identifier(int parameter){ ... }
+
+Additionally, arguements are passed from the caller to the function when a 
+function call is made.
+
+eg2) see ch2.main2_3()
+
+ ****************************************************************************** 
+********************************************************************************
+WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING 
+********************************************************************************
+C++ does not define whether function calls evaluate arguments left to right or 
+right to left. 
+
+DO NOT MAKE FUNCTION CALLS WHERE ARGUMENT ORDER MATTERS
+
+eg) 
+    // a() or b() may be called first.
+    someFunction(a(),b());
+
+sol)
+    // This guarantees that a() is called before b()
+    
+    int aVar{ a() };
+    int bVar{ b() };
+
+    someFunction(aVar,bVar);
+
+********************************************************************************
+WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING 
+********************************************************************************
+ ****************************************************************************** 
 
 
-test commit
 
 
+
+
+
+
+--------------------------------------------------------------------------------
+2.4 : Intro to local scope
+--------------------------------------------------------------------------------
 
