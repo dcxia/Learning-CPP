@@ -1,0 +1,21 @@
+# Usage:
+# make			# compile all binary
+# make clen		# remove ALL binaries and objects
+CC = g++
+
+PROJECTNAME = 2_10
+
+
+
+all: $(PROJECTNAME)
+
+$(PROJECTNAME):
+	# -I is used to include an extra directory
+	# $(CC) -o $(PROJECTNAME).exe -I ../include/directory main.cpp add.cpp
+	$(CC) -o $(PROJECTNAME).exe main.cpp add.cpp
+
+run:
+	$(PROJECTNAME).exe
+
+clean:
+	del $(PROJECTNAME).exe

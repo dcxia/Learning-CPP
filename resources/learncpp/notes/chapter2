@@ -379,3 +379,129 @@ The Preprocessor:
 
 
 
+================================================================================
+2.10: Header Files
+================================================================================
+Another alternative to forward declaring every function is to use header files.
+
+Header files are primarily used to propagate declaration to code files.
+
+One way to do this is to #include the headerfile for a library using the 
+#include directive.
+
+/// Best Practice
+    Header files should generally not contain function and variable definitions.
+    So as to not violate the one definition rule.
+
+    Additionally, when including a header file from the standard library, use 
+    the no extension version if it exists.
+
+    User defined headers should still use .h
+
+    Each file should explicitly #include all of the header files it needs to 
+    compile. Do not rely on headers included transitively from other headers.
+
+    When including headers, make sure to follow this order:
+
+        1. user-defined
+        2. third party headers
+        3. standard library headers
+
+///
+
+Another thing you can do is to include specific files in the make.
+    g++ -o main.exe -I/source/includes main.cpp
+
+When making a source file, include the corresponding heder file. 
+(maybe have a directory for all source files.)
+
+Angled Brackets vs Double Quotes:
+    Angled brackets are used for header files we didnt write ourselves.
+    Double-Quotes are used to tell the preprocessor that we wrote the file 
+    ourselves. 
+
+
+================================================================================
+2.11 Header Guards
+================================================================================
+
+An issue that can occur when using multiple header files is that some header
+files can include the same header file as the source file.
+
+
+We can make header guards with directives.
+eg)
+        -= square.h =-
+
+    #ifndef SQUARE_H
+    #define SQUARE_H
+
+    // your code here...
+
+    #endif
+
+
+
+        -= geometry.h =-
+    
+    #ifndef GEOMETRY_H
+    #define GEOMETRY_H
+
+    #include "square.h"
+
+    #endif
+
+
+
+        -= main.cpp =-
+
+    #include "square.h"
+
+    int main(){ ... }
+
+
+
+
+The whole point of header guards is to protect the code in the header from being 
+imported multiple times into the same file.
+
+A shortcut we can use is the 
+
+#pragma GUARDNAME
+
+
+
+================================================================================
+Designing my first program (lol)
+================================================================================
+
+Planning: 
+1. Define the goal 
+2. Define the requirements 
+3. Define tools, targets and backup plan
+    - Define target architecture and ourselves
+    - determine set of tools to be used
+    - Determine whether solo dev or team dev 
+    - Determine testing/feedback/release strat 
+    - Determine how you will back up code
+4. Break hard tasks into easier tasks.
+5. Figure out sequence of events. 
+
+Implementation:
+1. outline the main function.
+2. implement each function in the main function.
+3. Final Testing. 
+
+
+
+TIPS:
+
+Keep programs simple.
+
+Add features over time.
+
+Focus on one area at a time.
+
+Test each piece of code as you go.
+
+Don't invest in perfecting early code.
