@@ -1,0 +1,71 @@
+================================================================================
+4.1 : Introduction to fundamental Data types
+================================================================================
+
+Memory is organized into sequential units called memory addresses
+
+Addresses   
+    - Each address contains a byte size of information
+    - 
+
+Fundamental Data Types:
+    - Floating Point types
+        > a number with a fractional part
+        - float 
+        - double 
+        - long double
+
+    - integral (Boolean)
+        > true or false
+        - bool 
+    
+    - integral (Character)
+        > A single character of text
+        - char 
+        - wchar_t 
+        - char8_t ...
+
+    - integral (Integer)    
+        > positive, negative whole numbers including 0
+        - short 
+        - int 
+        - long
+        - long long
+
+    - null Pointer
+        > a null pointer
+        - std::nullptr_t
+
+    - void 
+        > no type
+        - void
+
+
+
+
+
+
+================================================================================
+4.2 VOID
+================================================================================
+void 
+    > no type
+
+also used as return type for functions that dont return a value.
+
+/// Best Practice
+
+    Use an empty parameter list instead of void to indicate that a function has
+    no parameters.
+///
+
+
+================================================================================
+4.3 Object sizes and sizeof operator
+================================================================================
+
+
+
+
+
+
