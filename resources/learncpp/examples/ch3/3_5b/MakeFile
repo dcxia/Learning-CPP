@@ -1,0 +1,18 @@
+# Usage:
+# make			# compile all binary
+# make clen		# remove ALL binaries and objects
+CC = g++
+
+PROJECTNAME = 3_5b
+INCLUDE = C:\users\Daniel\Documents\cpp_library\third_party\plog-1.1.5\include
+
+all: $(PROJECTNAME)
+
+$(PROJECTNAME):
+	$(CC) -o $(PROJECTNAME).exe -I $(INCLUDE) main.cpp
+
+run:
+	$(PROJECTNAME).exe
+
+clean:
+	del $(PROJECTNAME).exe

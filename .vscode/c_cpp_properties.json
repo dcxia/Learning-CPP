@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "~/Documents/cpp_library/third_party/plog-1.1.5/include"
             ],
             "defines": [
                 "_DEBUG",

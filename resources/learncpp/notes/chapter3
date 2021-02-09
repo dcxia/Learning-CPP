@@ -1,2 +1,164 @@
 ================================================================================
+3.1:  Syntax and Semantic Errors
 ================================================================================
+Time to learn how to integrate a debugging suite into vscode :^)
+
+straight up dont write wrong code.
+
+the compiler will not allow it 
+
+
+
+================================================================================
+3.2: Debugging Process
+================================================================================
+
+General Approach:
+    1. Find the root of hte problem
+    2. Ensure you understand why the issue is occuring
+    3. Determine the fix
+    4. Apply
+    5. Restest
+
+
+
+================================================================================
+3.3: Debugging Strategy
+================================================================================
+Apply good functional programming practices to your code. 
+Keep functions separate in what they do.
+
+1. Figure out how to reproduce the problem
+2. Run the program and gather information
+3. Repeat until you find the problem.
+
+
+================================================================================
+3.4: Basic Debugging Tactics
+================================================================================
+1. comment out code
+2. validate the code flow.
+
+TIP:
+    use std::cerr instaead of std::cout
+
+    std:cerr is unbuffered.
+
+see 3_4
+
+
+3. Print values
+
+HOWEVER,
+using print statements to debug is usually poor practice. 
+1. It clutters code
+2. clutters output of program
+3. They have to be removed after use which makes them non-reusable
+4. They require modification to code which can introduce new bugs.
+
+
+================================================================================
+3.5: More Debugging Tactics
+================================================================================
+5. Conditionalizing your debugging code.
+
+    This makes use of the #define directive. 
+    See ex 3_5
+
+    Now we can enable debugging by commenting/uncommenting the #define directive
+    If the project were multi file, it would be a better idea to put the 
+    #define directive into a header file that is included in all code files.
+    this way we can comment/uncomment the single #define to enable or disable 
+    debugging.
+
+    HOWEVER, WE CAN DO BETTER
+
+
+--------------------------------------------------------------------------------
+Using a Logger
+--------------------------------------------------------------------------------
+A log file records the events that occur in the software.
+
+Log files have advantages since there's no clutter to normal output or debug 
+output.
+
+You can also easily send log files to other people for diagnosis.
+
+check ex) 3_5b
+
+
+================================================================================
+3.6 Using vscode's integrated debugger.
+================================================================================
+
+No longer are we using makefiles, 
+
+we've moved on to using vscode's build configurations.
+
+
+use "ctrl + shift + b" to build the current active file. 
+It will run according to the tasks.json file in the root folder.
+
+However, we can use "F5" to run the launch settings.
+
+F5 will launch "launch.json".
+"launch.json" will run the task specified in launch.json in "tasks.json" since 
+
+Additionally, you can create breaks within the document.
+plog is still a good thing to use to log events during the run files. 
+
+--------------------------------------------------------------------------------
+Stepping
+--------------------------------------------------------------------------------
+VSCode allows you to step through your code and delve into function calls to 
+trace your program.
+
+StepInto:
+    You can step into function calls.
+
+StepOver:
+    Will run a function and will give you control after finishing running the 
+    function.
+
+StepOut:
+    Allows you to step out of a function call.
+
+
+
+
+
+================================================================================
+3.7 Running and Breakpoints
+================================================================================
+in VSCode you can put in breakpoints by clicking beside the line number.
+The project will run until it gets to the breakpoint.
+
+
+================================================================================
+3.8 Watching Variables
+================================================================================
+VScode will show you variable values.
+
+
+================================================================================
+3.9 The Call Stack
+================================================================================
+VScode will show you The call stack when you call functions.
+
+================================================================================
+3.10 Finding issues before they become problems
+================================================================================
+
+Dont make Errors:
+    1. Follow best practices
+    2. Dont program when tired.
+    3. Understand where common pitfalls are.
+    4. Keep the program simple.
+    5. Dont let your functions get too long.
+    6. Prefer using the standard library to writing your own code when possible.
+    7. Comment liberally.
+
+    
+
+
+
