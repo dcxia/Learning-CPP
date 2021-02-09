@@ -63,7 +63,93 @@ also used as return type for functions that dont return a value.
 ================================================================================
 4.3 Object sizes and sizeof operator
 ================================================================================
+8 bits = 1 byte
 
+/// Best Practice
+
+    Size of each data type is dependent on the compiler and/or computer 
+    architecture
+
+    You shouldnt assume that variables are larger than the specified minimum 
+    size.
+
+boolean 
+    bool: 1 byte 
+
+character
+    char        : 1 byte    : Always 1 byte
+    wchar_t     : 1 byte
+    char16_t    : 2 bytes
+
+integer
+    short       : 2 bytes
+    int         : 2 bytes
+    long        : 4 bytes 
+    long long   : 8 bytes
+
+floating point 
+    float       : 4 bytes
+    double      : 8 bytes 
+    long double : 8 bytes
+
+///
+
+--------------------------------------------------------------------------------
+The sizeof Operator
+--------------------------------------------------------------------------------
+The sizeof operator takes a type or a variable and returns its size in bytes.
+
+see ex) 4_3
+
+
+
+================================================================================
+4.4 Signed integers
+================================================================================
+
+Integer overflow occurs when you try to assign a value greater than an n-bit 
+integar can hold.
+
+It happens when you try to store a value that is outside the range of the type.
+
+
+When doing integer division, you will lose the fractional part of the number.
+The fractional part is simply dropped and not rounded.
+
+
+
+================================================================================
+4.5 : unsigned integers and why to avoid them
+================================================================================
+To define an unsigned integer, use the unsigned keyword. 
+Place this keyword before the type.
+
+unsigned integers have a range from 0 to n but are twice as large as their 
+signed counterpart.
+
+If an unsigned integer overflows then the unsigned integer wraps around.
+
+****
+    A lot of bugs in videogames happen due to wrap around of unsigned integers.
+****
+
+Alot of developers and large development houses believe that developers should
+generally avoid unsigned integers.
+
+This is becuase unsigned integers can't handle negative numbers and as an result
+cause overflow. (ghandi going nuclear crazy on people in civ.)
+
+/// Best Practice
+
+    "Using an unsigned instead of an int to gain one more bit to represent 
+    positive integers is almost never a good idea."
+
+    However, you can still use them for things like bit manipulation.
+///
+
+================================================================================
+4.6 Fixed Width Integers and size_t
+================================================================================
 
 
 
